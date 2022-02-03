@@ -22,7 +22,31 @@ const getNewLocationFinal = () => {
 }
 
 // Function to generate four answers. Will replace with API function.
+const randomCities = ["Manchester, UK", "Chicago, US", "St. Petersburg, RU", "Dubai, AE", "Marrakesh, MA", "Buenos Aires, AR"]
 
+const getOtherLocations = () => {
+    const threeCities = [];
+    while (threeCities.length != 3) {
+        const newCityPosition = Math.floor(Math.random() * randomCities.length);
+        const newCity = randomCities[newCityPosition];
+        if (!threeCities.includes(newCity)) {
+            threeCities.push(newCity);
+        };
+    };
+    return threeCities;
+}
+
+// This will run the GeoNames API function 3 times, and make sure the same result isn't selected.
+const getOtherLocationsFinal = () => {
+    const threeCities = [];
+    while (threeCities.length != 3) {
+        const newCity = getGeoNames();
+        if (!threeCities.includes(newCity)) {
+            threeCities.push(newCity);
+        }
+    }
+    return threeCities;
+}
 
 // Function to generate an object that contains the image and all four answers.
 
@@ -36,4 +60,4 @@ const getNewLocationFinal = () => {
 // Function to present scores.
 // Function to collect user input / their name.
 // Function to store score and name.
-// Function to restart the game. 
+// Function to restart the game.
