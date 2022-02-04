@@ -49,6 +49,17 @@ const getOtherLocationsFinal = () => {
 }
 
 // Function to generate an object that contains the image and all four answers.
+const generateQuestionObj = (correctLocation, otherAnswers) => {
+    return {
+        image: correctLocation[0],
+        answer1: correctLocation[1],
+        answer2: otherAnswers[0],
+        answer3: otherAnswers[1],
+        answer4: otherAnswers[2],
+    }
+}
+
+console.log(generateQuestionObj(getNewLocation(), getOtherLocations()));
 
 
 // Function to randomise the order of the four answers.
