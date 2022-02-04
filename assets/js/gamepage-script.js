@@ -67,6 +67,7 @@ const pushQuestions = (questions) => {
     
     const correctPlacement = Math.floor(Math.random() * 4);
     allPlacements[correctPlacement].innerHTML = allAnswers[0];
+    allPlacements[correctPlacement].setAttribute("class", "btn correct");
     usedPlacements.push(allPlacements[correctPlacement]);
 
     while (usedPlacements.length < 4) {
@@ -75,18 +76,11 @@ const pushQuestions = (questions) => {
         const nextAnswer = usedPlacements.length;
         if (!usedPlacements.includes(nextPlacement)) {
             nextPlacement.innerHTML = allAnswers[nextAnswer];
+            nextPlacement.setAttribute("class", "btn incorrect");
             usedPlacements.push(nextPlacement);
         }
     }
-    }
-
-
-
-// Two arrays, one with the locations and one with the answers
-// Randomly select the locations
-// First position the right answer
-// Use a while loop to pair the remaining answers
-
+}
 
 // Function to run when correct answer is selected.
 // Function to run when incorrect answer is selected.
