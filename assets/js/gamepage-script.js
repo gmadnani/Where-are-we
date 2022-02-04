@@ -1,9 +1,9 @@
 // ID Tags we will need to store under variables in the HTML:
 const pictureContainer = "";
-const ansContainer1 = "";
-const ansContainer2 = "";
-const ansContainer3 = "";
-const ansContainer4 = "";
+const ansContainer1 = document.getElementById("answer-1");
+const ansContainer2 = document.getElementById("answer-2");
+const ansContainer3 = document.getElementById("answer-3");
+const ansContainer4 = document.getElementById("answer-4");
 
 // Function to retrieve photo. Will replace with API function.
 // This function will generate a random picture of London, and can be used to test the code. 
@@ -59,13 +59,34 @@ const generateQuestionObj = (correctLocation, otherAnswers) => {
     }
 }
 
-console.log(generateQuestionObj(getNewLocation(), getOtherLocations()));
+// Function to push the answer options to the HTML in a random order. 
+const pushQuestions = (questions) => {
+    const allAnswers = [questions.answer1, questions.answer2, questions.answer3, questions.answer4];
+    const allPlacement = [ansContainer1, ansContainer2, ansContainer3, ansContainer4];
+    for (i = 0; i < allPlacement.length; i++) {
+        const nextPlacement = allPlacement[i];
+        nextPlacement.innerText = allAnswers[i];
+    };
+
+}
 
 
-// Function to randomise the order of the four answers.
+
+// Two arrays, one with the locations and one with the answers
+// Randomly select the locations
+// First position the right answer
+// Use a while loop to pair the remaining answers
+
+
 // Function to run when correct answer is selected.
 // Function to run when incorrect answer is selected.
+
 // Function that generates a new question when the question is answered.
+const questionObject = generateQuestionObj(getNewLocation(), getOtherLocations());
+
+pushQuestions(questionObject);
+console.log(ansContainer1)
+
 // Timer that resets with each new question.
 
 // Function to present scores.
