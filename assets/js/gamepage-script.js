@@ -62,13 +62,23 @@ const generateQuestionObj = (correctLocation, otherAnswers) => {
 // Function to push the answer options to the HTML in a random order. 
 const pushQuestions = (questions) => {
     const allAnswers = [questions.answer1, questions.answer2, questions.answer3, questions.answer4];
-    const allPlacement = [ansContainer1, ansContainer2, ansContainer3, ansContainer4];
-    for (i = 0; i < allPlacement.length; i++) {
-        const nextPlacement = allPlacement[i];
-        nextPlacement.innerText = allAnswers[i];
-    };
+    const allPlacements = [ansContainer1, ansContainer2, ansContainer3, ansContainer4];
+    const usedPlacements = [];
+    
+    const correctPlacement = Math.floor(Math.random() * 4);
+    allPlacements[correctPlacement].innerHTML = allAnswers[0];
+    usedPlacements.push(allPlacements[correctPlacement]);
 
-}
+    while (usedPlacements.length < 4) {
+        const nextPosition = Math.floor(Math.random() * 4);
+        const nextPlacement = allPlacements[nextPosition];
+        const nextAnswer = usedPlacements.length;
+        if (!usedPlacements.includes(nextPlacement)) {
+            nextPlacement.innerHTML = allAnswers[nextAnswer];
+            usedPlacements.push(nextPlacement);
+        }
+    }
+    }
 
 
 
