@@ -80,20 +80,52 @@ const pushQuestions = (questions) => {
             usedPlacements.push(nextPlacement);
         }
     }
+    generateRightAnsButtons();
+    generateWrongAnsButtons();
 }
 
-// Function to run when correct answer is selected.
-// Function to run when incorrect answer is selected.
+// Function to store and display scores.
+let score = 0;
 
 // Function that generates a new question when the question is answered.
 const questionObject = generateQuestionObj(getNewLocation(), getOtherLocations());
 
 pushQuestions(questionObject);
-console.log(ansContainer1)
+
+// Function to run when correct answer is selected.
+function generateRightAnsButtons() {
+    const rightAnsButton = document.querySelector(".correct");
+    const rightAnsClicked = () => {
+        score++;
+        pushQuestions(questionObject);
+        console.log(score)
+    }
+    rightAnsButton.removeEventListener("click", rightAnsClicked);
+    rightAnsButton.addEventListener("click", rightAnsClicked);
+}
+
+
+// Function to run when incorrect answer is selected.
+
+function generateWrongAnsButtons() {
+    const wrongAnsButton = document.querySelectorAll(".incorrect");
+    const wrongAnsClicked = () => {
+        score--;
+        pushQuestions(questionObject);
+        console.log(score)
+    } 
+    wrongAnsButton[0].addEventListener("click", wrongAnsClicked);
+    wrongAnsButton[1].addEventListener("click", wrongAnsClicked);
+    wrongAnsButton[2].addEventListener("click", wrongAnsClicked);
+}
+
+
+
 
 // Timer that resets with each new question.
 
 // Function to present scores.
 // Function to collect user input / their name.
-// Function to store score and name.
+// Function to push high scores and username to local storage.
+// Fucntion to retrieve high scores and username from local storage.
 // Function to restart the game.
