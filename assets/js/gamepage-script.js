@@ -110,12 +110,12 @@ const answerChosen = event => {
     if (answerPicked === correctAnswer) {
         score++; // This needs to be pushed to the page, currently no container for it. 
         pushQuestions(questionObject);
-        console.log(score);
     } else {
         score--; // This needs to be pushed to the page.
         pushQuestions(questionObject);
         console.log(score);
     };
+    scoreContainer.innerText = score;
     pushPhotograph();
     resetTimer();
 }
