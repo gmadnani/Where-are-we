@@ -5,43 +5,64 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="Assets/setting-stylesheet.css"
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
 <body>
-  <header><span>What are We</span></header>
 
-  <header>Questions or Setting</header>
-  <div>
+  <header><span>Where</span> are <h1><span></span>We</span></h1></header>
+
+  <header>Settings</header>
+  <div class=containerchoice id="container-choice">
+
+
+  <section class="boxedinfo" id="boxedinfo">
     <ul>
       <li>Here you can work out how long you wish to spend on a game</li>
-      <li>This make sure you can complete the game and get the score</li>
-      <li>Chose A timer (select option 1 or 2)</li>
-      <li>1-Whole Game Timer</li>
-      <input type="text" name="fname" size="1"/> 
-      <input type="text" name="fname" size="1"/> 
-      <div class="boxed">boxed</div>
-      <div></div>
-  
+      <li>This will make sure you can complete the game and get the score</li>
+      <li>Choose a timer (select option 1 or 2)</li>
     </ul>
-  </div>
-  <div>
-    <ul>
-      <li>3- Timed Questions</li>
-      <input type="text" name="fname" size="1"/> 
-      <input type="text" name="fname" size="1"/> 
-    </ul>
-  </div>
+  </section>
+      <br>
+ <!-- <div class=timechoice>-->
+  <div class="boxedit">
+<section class="boxed" id="boxedwgtimer">
+  <h5><i>Option 1.</i><h5> <h3><br>Whole Game Timer</br></h3>
+      <input type="checkbox" id=cboxtimer name="fname"/> 
+      <!--<input type="text" name="fname" size="1"/>--> 
+</section>
 
-  <header>Number of Questions</header>
-  <input type="text" name="fname" size="1"/>
-  <input type="text" name="fname" size="1"/>
-
-  <p>The Duration of your Game will be 1 minute 45 seconds</p>
   
-  <button id="setting">setting</button>
-  <button id="privacy">privacy/GDPR Info</button>
-  <button id="begin-game">start game</button>
-  <button id="Home">Home</button>
+  <section class="boxed" id="boxedtimedq ">
+      <h5><i>Option 2.</i><h5> <h3><br>Timed Questions</br></h3>
+      <input type="checkbox" id=cboxq name="fname" size="1"/>
+      <!--<input type="text" name="fname" size="10"/> -->
+  </section>
+
+
+
+<section class="boxed" id="boxednumberq">
+  <h4>Number of Questions</h4>
+  <input type="text" id=qtens name="fname" size="1"/>
+  <input type="text" id=qunits name="fname" size="1"/>
+</section>
+
+</div>
+
+
+  <p>The Duration of your Game will be <field>
+    <input type="time" name="duration" id="gametime">
+  </field></p>
+  <div class=btnwrapper>
+  <button class=btnset id="setting">Settings</button>
+ <!--<button id="privacy">privacy/GDPR Info</button>>-->
+  <button class=btnstart id="begin-game">Start Game</button>
+</div>
+  <!--<button id="Home">Home</button>-->
+
 
 
   
