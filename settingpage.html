@@ -6,12 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Settings Page</title>
   <link rel="stylesheet" href="assets/setting-stylesheet.css">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
+  <!--<link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <link rel="stylesheet" href="css/skeleton.css">-->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 
-</head>
+<head>
 
 <header class="v-header container">
   <div class="fullscreen-video-wrap">
@@ -22,7 +25,10 @@
     <h1>Do you have time to play a game?</h1>
     <li>You get 15 seconds to answer each question!! </li>
     <li>A 10 question game will take you 2 minutes and 30 seconds to complete </li></p>
-    <a href="#" class="btn">Read More</a>
+    
+    <a href="#" class="tooltipbtn">Read More</a>
+     <!-- <span class="tooltiptext">Did you guess correctly. That was Tokoyo</span>-->
+    </div>
   </div>
 
 </header>
@@ -36,11 +42,11 @@
 
   <div class="innerchoice" id="inner-choice">
   <section class="boxedinfo" id="boxedinfo">
-    <ul><bold>
+    <ol><bold>
       <li>You can choose individually timed questions or a single timer for the whole game (select option 1 or 2)</li>
-      <li>Choose the number of questions you have time to answer</li>
-      <li>Then press 'Start Game'</li>
-    </bold></ul>
+      <li>Choose the number of questions you have time to answer.</li>
+      <li>Then press the 'Start Game' button.</li>
+    </bold></ol>
   </section>
      
 
@@ -59,8 +65,17 @@
 
   <section class="boxed" id="boxednumberq">
       <h4>Number of Questions</h4>
-      <input type="text" id=qtens name="fname" size="1"/>
-      <input type="text" id=qunits name="fname" size="1"/>
+      <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div> 
+    <!--<input type="text" id=qtens name="fname" size="1"/>
+      <input type="text" id=qunits name="fname" size="1"/>-->
+
   </section>
 </div>
 
@@ -79,7 +94,7 @@
   <!--<button id="Home">Home</button>-->
 
 
-
+ 
   
 </body>
 </html>
