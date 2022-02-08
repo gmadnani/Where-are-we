@@ -14,44 +14,49 @@
 //https://www.flickr.com/services/api/explore/flickr.photos.search
 // 'https://api.unsplash.com/search/photos?query=london&client_id=<YOUR CLIENT ID GOES HERE>';
 
-function randomCity(){
-    var queryURL = 'http://dataservice.accuweather.com/locations/v1/topcities/50?apikey=nqkAVAuvzGPmrydtswPleNqPjEwoDmOJ';
-    let randomNumber = Math.floor(Math.random() * 49);
-    return fetch(queryURL)
-        .then((res) => res.json())
-        .then((country) => {
-          let allcountries = country;
-          console.log(country[randomNumber].LocalizedName);
-          city = country[randomNumber].LocalizedName
-          console.log(city);
-          return (city);
-        })
-}
+// function getGeoNames(){
+//     var queryURL = 'http://dataservice.accuweather.com/locations/v1/topcities/50?apikey=nqkAVAuvzGPmrydtswPleNqPjEwoDmOJ';
+//     let randomNumber = Math.floor(Math.random() * 49);
+//     var array=[]
+//     return fetch(queryURL)
+//         .then((res) => res.json())
+//         .then((data) => {
+//         //   let country = data;
+//         //   console.log(country[randomNumber].LocalizedName);
+//           let country = data[randomNumber].Country.LocalizedName;
+//           let city = data[randomNumber].LocalizedName
 
-async function photo() {
-    //URL
-    city = await randomCity();
-    console.log(city)
-    var queryURL = 'https://api.unsplash.com/search/photos?query='+city+'&client_id=1tOjV5-F3U0hFpgkRGZtFpfT_LjrRVAzn3Ho6t522oQ';
-    console.log(queryURL)
-    let randomNumber = Math.floor(Math.random() * 5);
-      return fetch(queryURL)
-        .then((response) => response.json())
-        .then((data) => {
-          let allImages = data.results[randomNumber];
-          console.log(allImages.urls.regular);
-
-          document.getElementById("img-answer").style.backgroundImage = "url(" + allImages.urls.regular + ")"
-        //   var img = document.createElement("img");
-        //   img.src = allImages.urls.regular;
-        //   var src = document.getElementById("img-answer")
-        //   src.appendChild(img)
+//           array.push(city, country)
           
-        //   $("#img-answer").append(`
-        //   <img src= "${allImages.urls.regular}"/> 
-        //   `)
-        });
-}
+//           console.log(array);
+//           return (array);
+//         })
+// }
+
+// async function photo() {
+//     //URL
+//     city = await getGeoNames();
+//     console.log(city)
+//     var queryURL = 'https://api.unsplash.com/search/photos?query='+city+'&client_id=1tOjV5-F3U0hFpgkRGZtFpfT_LjrRVAzn3Ho6t522oQ';
+//     console.log(queryURL)
+//     let randomNumber = Math.floor(Math.random() * 5);
+//       return fetch(queryURL)
+//         .then((response) => response.json())
+//         .then((data) => {
+//           let allImages = data.results[randomNumber];
+//           console.log(allImages.urls.regular);
+
+//           document.getElementById("img-answer").style.backgroundImage = "url(" + allImages.urls.regular + ")"
+//         //   var img = document.createElement("img");
+//         //   img.src = allImages.urls.regular;
+//         //   var src = document.getElementById("img-answer")
+//         //   src.appendChild(img)
+          
+//         //   $("#img-answer").append(`
+//         //   <img src= "${allImages.urls.regular}"/> 
+//         //   `)
+//         });
+// }
 
 
 // function randomCity(){
@@ -77,5 +82,5 @@ async function photo() {
 
 
 // randomCity();
-photo();
+// photo();
 
