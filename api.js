@@ -13,9 +13,26 @@
 //https://www.flickr.com/services/api/explore/flickr.photos.search
 // 'https://api.unsplash.com/search/photos?query=london&client_id=<YOUR CLIENT ID GOES HERE>';
 
-function photo() {
+function randomCity(){
+    var queryURL = 'http://dataservice.accuweather.com/locations/v1/topcities/50?apikey=nqkAVAuvzGPmrydtswPleNqPjEwoDmOJ';
+    let randomNumber = Math.floor(Math.random() * 49);
+    return fetch(queryURL)
+        .then((res) => res.json())
+        .then((country) => {
+          let allcountries = country;
+          console.log(country[randomNumber].LocalizedName);
+          city = country[randomNumber].LocalizedName
+          console.log(city);
+          return (city);
+        })
+}
+
+async function photo() {
     //URL
-    var queryURL = 'https://api.unsplash.com/search/photos?query=mumbai&client_id=1tOjV5-F3U0hFpgkRGZtFpfT_LjrRVAzn3Ho6t522oQ';
+    city = await randomCity();
+    console.log(city)
+    var queryURL = 'https://api.unsplash.com/search/photos?query='+city+'&client_id=1tOjV5-F3U0hFpgkRGZtFpfT_LjrRVAzn3Ho6t522oQ';
+    console.log(queryURL)
     let randomNumber = Math.floor(Math.random() * 5);
       return fetch(queryURL)
         .then((response) => response.json())
@@ -34,6 +51,30 @@ function photo() {
         //   `)
         });
 }
+
+
+// function randomCity(){
+//     var queryURL = 'https://countriesnow.space/api/v0.1/countries';
+//     return fetch(queryURL)
+//         .then((res) => res.json())
+//         .then((country) => {
+//           let allcountries = country;
+//           console.log(country);
+//         })
+// }
+
+// function randomCity(){
+//     var queryURL = 'https://akabab.github.io/superhero-api/api/all.json';
+//     let randomNumber = Math.floor(Math.random() * 563);
+//     return fetch(queryURL)
+//         .then((res) => res.json())
+//         .then((superhero) => {
+//             console.log(superhero[randomNumber].name);
+//           console.log(superhero[randomNumber].images.md);
+//         })
+// }
+
+
+// randomCity();
 photo();
 
-  
