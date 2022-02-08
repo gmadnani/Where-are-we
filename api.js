@@ -33,7 +33,7 @@
 //         })
 // }
 
-// async function photo() {
+// async function getPhoto() {
 //     //URL
 //     city = await getGeoNames();
 //     console.log(city)
