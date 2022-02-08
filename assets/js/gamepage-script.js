@@ -81,8 +81,6 @@ const pushQuestions = (questions) => {
             usedPlacements.push(nextPlacement);
         }
     }
-    /* generateRightAnsButtons();
-    generateWrongAnsButtons(); */
 }
 
 // Function to store and display scores.
@@ -94,50 +92,20 @@ const questionObject = generateQuestionObj(getNewLocation(), getOtherLocations()
 pushQuestions(questionObject);
 
 // Event listener for answer container. 
-// Event listener for answer container. 
 const answerChosen = event => {
     const answerPicked = event.target;
     const correctAnswer = document.querySelector(".correct");
     if (answerPicked === correctAnswer) {
-        console.log("It matches!");
+        score++
+        pushQuestions(questionObject);
+        console.log(score);
     } else {
-        console.log("It doesn't match!")
+        score--
+        pushQuestions(questionObject);
+        console.log(score);
     };
 }
-answerContainer.addEventListener("click", answerChosen)
-
-
-/*
-// Function to run when correct answer is selected.
-function generateRightAnsButtons() {
-    const rightAnsButton = document.querySelector(".correct");
-    const rightAnsClicked = event => {
-        console.log(event);
-        score++;
-        pushQuestions(questionObject);
-        console.log(score)
-    }
-
-}
-
-rightAnsButton.addEventListener("click", rightAnsClicked);
-wrongAnsButton[0].addEventListener("click", wrongAnsClicked);
-wrongAnsButton[1].addEventListener("click", wrongAnsClicked);
-wrongAnsButton[2].addEventListener("click", wrongAnsClicked);
-
-// Function to run when incorrect answer is selected.
-function generateWrongAnsButtons() {
-    const wrongAnsButton = document.querySelectorAll(".incorrect");
-    const wrongAnsClicked = event => {
-        console.log(event);
-        score--;
-        pushQuestions(questionObject);
-        console.log(score)
-    } 
-}
-
-
-*/
+answerContainer.addEventListener("click", answerChosen);
 
 // Timer that resets with each new question.
 
