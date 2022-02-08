@@ -60,13 +60,13 @@
    /} */
   
   
-  .img-answer{
+  #img-answer{
       max-height: 100%;
      object-fit:contain;
-     width: 100%;
-     height: 300px;
+     width: 700px;
+     height: 500px;
      background-position: center;
      background-size: cover;
-     background-image: url(./norway.jpeg);
+     /* background-image: url(./norway.jpeg); */
   }
   

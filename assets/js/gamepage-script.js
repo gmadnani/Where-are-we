@@ -5,7 +5,7 @@ const ansContainer1 = document.getElementById("answer-1"); // Want to rename the
 const ansContainer2 = document.getElementById("answer-2");
 const ansContainer3 = document.getElementById("answer-3");
 const ansContainer4 = document.getElementById("answer-4");
-const questionImage = document.querySelector(".img-answer").style;
+// const questionImage = document.querySelector(".img-answer").style;
 
 const timerContainer = document.getElementById("start-btn"); // This needs changing when a new element is built.
 const scoreContainer = document.getElementById("next-btn"); // This needs changing when a new element is built.
@@ -14,20 +14,69 @@ console.log(scoreContainer);
 
 // Function to retrieve photo. Will replace with API function.
 // This function will generate a random picture of London, and can be used to test the code. 
-const getNewLocation = () => {
-    const photoArray = ["test-image-1.jpg", "test-image-2.jpg", "test-image-3.jpg", "test-image-4.jpg"];
-    const randNo = Math.floor(Math.random() * 4);
-    const randPhoto = photoArray[randNo];
-    return [randPhoto, "London, UK"];
-}
+// const getNewLocation = () => {
+//     const photoArray = ["test-image-1.jpg", "test-image-2.jpg", "test-image-3.jpg", "test-image-4.jpg"];
+//     const randNo = Math.floor(Math.random() * 4);
+//     const randPhoto = photoArray[randNo];
+//     return [randPhoto, "London, UK"];
+// }
 
 // This is closer to what the API function will actually look like:
-const getNewLocationFinal = () => {
-    const newLocation = getGeoName();
-    const locationPhoto = getPhoto();
-    return [newLocation, locationPhoto];
+ async function getLocation() {
+    const newLocation = await getGeoName();
+    // console.log(newLocation)
+    const locationPhoto = await getPhoto(newLocation[0]);
+    const newLocString = `${newLocation[0]}, ${newLocation[1]}`;
+    console.log([newLocString, locationPhoto])
+    return [newLocString, locationPhoto];
+
 }
 
+function getGeoName(){
+    var queryURL = 'http://dataservice.accuweather.com/locations/v1/topcities/50?apikey=nqkAVAuvzGPmrydtswPleNqPjEwoDmOJ';
+    let randomNumber = Math.floor(Math.random() * 49);
+    var array=[]
+    return fetch(queryURL)
+        .then((res) => res.json())
+        .then((data) => {
+        //   let country = data;
+        //   console.log(country[randomNumber].LocalizedName);
+          let country = data[randomNumber].Country.LocalizedName;
+          let city = data[randomNumber].LocalizedName
+
+          array.push(city, country)
+          
+          console.log(array);
+          return (array);
+        })
+}
+
+function getPhoto(city) {
+    //     //URL
+        // city = await getGeoNames();
+        console.log(city)
+        var queryURL = 'https://api.unsplash.com/search/photos?query='+city+'&client_id=1tOjV5-F3U0hFpgkRGZtFpfT_LjrRVAzn3Ho6t522oQ';
+        console.log(queryURL)
+        let randomNumber = Math.floor(Math.random() * 5);
+          return fetch(queryURL)
+            .then((response) => response.json())
+            .then((data) => {
+              let allImages = data.results[randomNumber];
+              console.log(allImages.urls.regular);
+              return (allImages.urls.regular)
+    
+            //   document.getElementById("img-answer").style.backgroundImage = "url(" + allImages.urls.regular + ")"
+            //   var img = document.createElement("img");
+            //   img.src = allImages.urls.regular;
+            //   var src = document.getElementById("img-answer")
+            //   src.appendChild(img)
+              
+            //   $("#img-answer").append(`
+            //   <img src= "${allImages.urls.regular}"/> 
+            //   `)
+            });
+    }
+    
 // Function to generate four answers. Will replace with API function.
 const randomCities = ["Manchester, UK", "Chicago, US", "St. Petersburg, RU", "Dubai, AE", "Marrakesh, MA", "Buenos Aires, AR"]
 
@@ -93,7 +142,7 @@ const pushQuestions = (questions) => {
 let score = 0;
 
 // Function that generates a new question when the question is answered.
-const questionObject = generateQuestionObj(getNewLocation(), getOtherLocations());
+const questionObject = generateQuestionObj(getLocation(), getOtherLocations());
 
 pushQuestions(questionObject); // Should replace this with a 'ReloadPage()' function eventually. 
 
