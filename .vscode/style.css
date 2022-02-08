@@ -67,7 +67,7 @@
   
   .img-answer{
       max-height: 100%;
-      /* background-color: aquamarine; */
+      background-color: aquamarine;
      object-fit:contain;
      width: 700px;
      height: 500px;
