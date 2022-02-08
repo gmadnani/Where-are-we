@@ -1,5 +1,6 @@
 // ID Tags we will need to store under variables in the HTML:
 const pictureContainer = "";
+const answerContainer = document.getElementById("answer-buttons");
 const ansContainer1 = document.getElementById("answer-1");
 const ansContainer2 = document.getElementById("answer-2");
 const ansContainer3 = document.getElementById("answer-3");
@@ -80,8 +81,8 @@ const pushQuestions = (questions) => {
             usedPlacements.push(nextPlacement);
         }
     }
-    generateRightAnsButtons();
-    generateWrongAnsButtons();
+    /* generateRightAnsButtons();
+    generateWrongAnsButtons(); */
 }
 
 // Function to store and display scores.
@@ -92,35 +93,51 @@ const questionObject = generateQuestionObj(getNewLocation(), getOtherLocations()
 
 pushQuestions(questionObject);
 
+// Event listener for answer container. 
+// Event listener for answer container. 
+const answerChosen = event => {
+    const answerPicked = event.target;
+    const correctAnswer = document.querySelector(".correct");
+    if (answerPicked === correctAnswer) {
+        console.log("It matches!");
+    } else {
+        console.log("It doesn't match!")
+    };
+}
+answerContainer.addEventListener("click", answerChosen)
+
+
+/*
 // Function to run when correct answer is selected.
 function generateRightAnsButtons() {
     const rightAnsButton = document.querySelector(".correct");
-    const rightAnsClicked = () => {
+    const rightAnsClicked = event => {
+        console.log(event);
         score++;
         pushQuestions(questionObject);
         console.log(score)
     }
-    rightAnsButton.removeEventListener("click", rightAnsClicked);
-    rightAnsButton.addEventListener("click", rightAnsClicked);
+
 }
 
+rightAnsButton.addEventListener("click", rightAnsClicked);
+wrongAnsButton[0].addEventListener("click", wrongAnsClicked);
+wrongAnsButton[1].addEventListener("click", wrongAnsClicked);
+wrongAnsButton[2].addEventListener("click", wrongAnsClicked);
 
 // Function to run when incorrect answer is selected.
-
 function generateWrongAnsButtons() {
     const wrongAnsButton = document.querySelectorAll(".incorrect");
-    const wrongAnsClicked = () => {
+    const wrongAnsClicked = event => {
+        console.log(event);
         score--;
         pushQuestions(questionObject);
         console.log(score)
     } 
-    wrongAnsButton[0].addEventListener("click", wrongAnsClicked);
-    wrongAnsButton[1].addEventListener("click", wrongAnsClicked);
-    wrongAnsButton[2].addEventListener("click", wrongAnsClicked);
 }
 
 
-
+*/
 
 // Timer that resets with each new question.
 
