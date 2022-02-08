@@ -1,13 +1,14 @@
-// Key:
+// flickr Key:
 // var apikey= "8b490cb315b9b22931c2ddb2cf874056";
-
 // Secret:
 // f68539db0a12a37c
 
-// Access Key
+// pictures Access Key
 // 1tOjV5-F3U0hFpgkRGZtFpfT_LjrRVAzn3Ho6t522oQ
 // Secret key
 // FOQftVae2YdQSYHyigg3xabCR4A3x8ZgerU-R7L5lkA
+
+//city API Key	nqkAVAuvzGPmrydtswPleNqPjEwoDmOJ
 
 
 //https://www.flickr.com/services/api/explore/flickr.photos.search
