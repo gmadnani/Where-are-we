@@ -95,7 +95,6 @@ async function generateNewQuestion () {
             usedPlacements.push(nextPlacement);
         }
     }
-
     const photo = questionObject.image;
     console.log(photo);
     questionImage.style.backgroundImage = `url(${photo})`;
@@ -104,17 +103,6 @@ generateNewQuestion();
 
 // Function to store and display scores.
 let score = 0;
-
-// Function that generates a new question when the question is answered.
-// const questionObject = generateQuestionObj(getLocation(), getOtherLocations());
-
-// pushQuestions(questionObject); // Should replace this with a 'ReloadPage()' function eventually. 
-
-// Function to push the new photograph:
-const pushPhotograph = () => {
-    const photo = getNewLocation()[0];
-    questionImage.backgroundImage = `url("assets/js/${photo}")`;
-} // This needs tidying; the same object needs to pass through this function and the ones above. 
 
 // Event listener for answer container. 
 const answerChosen = event => {
