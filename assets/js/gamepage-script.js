@@ -5,7 +5,12 @@ const ansContainer1 = document.getElementById("answer-1"); // Want to rename the
 const ansContainer2 = document.getElementById("answer-2");
 const ansContainer3 = document.getElementById("answer-3");
 const ansContainer4 = document.getElementById("answer-4");
-const questionImage = document.querySelector(".img-answer").style
+const questionImage = document.querySelector(".img-answer").style;
+
+const timerContainer = document.getElementById("start-btn"); // This needs changing when a new element is built.
+const scoreContainer = document.getElementById("next-btn"); // This needs changing when a new element is built.
+console.log(timerContainer);
+console.log(scoreContainer);
 
 // Function to retrieve photo. Will replace with API function.
 // This function will generate a random picture of London, and can be used to test the code. 
@@ -95,7 +100,7 @@ pushQuestions(questionObject); // Should replace this with a 'ReloadPage()' func
 // Function to push the new photograph:
 const pushPhotograph = () => {
     const photo = getNewLocation()[0];
-    questionImage.backgroundImage = `url("assets/js/${photo}")`
+    questionImage.backgroundImage = `url("assets/js/${photo}")`;
 }
 
 // Event listener for answer container. 
