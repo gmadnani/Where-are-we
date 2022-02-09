@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&family=Nova+Square&family=Roboto+Mono:wght@500&family=Roboto:wght@700&family=Rubik:ital,wght@1,300&family=Russo+One&display=swap');
+.rule_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 75px 70px;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: rgb(255, 227, 178);
+  font-family: Nova Square;
+}
+body{
+  background:linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(./Assets/Images/world-map-lisa-middleton.jpg
+  );
+}
+.rule_box.rule_title{
+  border-bottom: 1px solid ;
+}
+a {
+  display: none;
+}
+.rule-list{
+  line-height: 1.5em;
+}
+h2{
+  color: rgba(192, 37, 17, 0.671);
+}
+h1{
+  color: rgba(179, 165, 154);
+}
+title{
+  justify-content: center;
+}
+button{
+
+  font-family: Nova Square;
+}
+button:hover{
+  background:linear-gradient(rgba(143, 131, 25, 0.5), rgba(255,255,255,0.5)), url(./Assets/Images/world-map-lisa-middleton.jpg
+  );
+}
+button:focus{
+  outline: 0;
+}
+.rule-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 75px 70px;
+}
