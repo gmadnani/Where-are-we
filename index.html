@@ -8,6 +8,33 @@
     <title>Document</title>
 </head>
 <body>
+    <section id="home"> 
+        <h1>Where Are We</h1>
+        <div class="rule_box">
+          <div class="rule-title"><span>These are the rules to follow:</span></div>
+          <div class="rule-list">
+            
+    
+            <div class="rule">
+              1. Every Question you will have seconds <span>10-15 seconds</span>
+            </div>
+            <div class="rule">2. Selected answer can't be undone</div>
+            <div class="rule">3. Can't select after 5 seconds</div>
+            <div class="rule">4. When you begin the quiz you cannot exit</div>
+            <div class="rule">5. When you press begin the the quiz start</div>
+          </div>
+          <div class="buttons">
+            <button class="quit">Exit Quiz</button>
+            <button class="begin again">Continue</button>
+    
+            <h1>Coding Quiz Challenge</h1>
+            <p>
+              Try to follow the the rules of the span quiz and answer the question to your best of your ability <p>
+          </div>
+        </div>
+      </section>
+
+      <section id="quiz">
     
    <div class="container">
     <a href="/quiz"></a>
@@ -31,9 +58,60 @@
         <section id="score"><p></p>0</section>
         <span id="right-answer"></span>
    </div>
+
+</section>
+
+<section id= "highscore">
+    <header><strong>Current High Score Section</strong></header>
+
+    <div id="This-highscore-container" class="hide">
+      <div class="This-highscore-container">
+        <h1 class="highest-score">High Scores</h1>
+        <ol id="high-score-list" class="score-list"></ol>
+        <div>
+          <button class="btn" id="end-game">End Game</button>
+          <button class="btn" id="restart-score">Restart Score</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id= "settings">
+    <div>
+      <ul>
+        <li>Here you can work out how long you wish to spend on a game</li>
+        <li>This make sure you can complete the game and get the score</li>
+        <li>Chose A timer (select option 1 or 2)</li>
+        <li>1-Whole Game Timer</li>
+        <input type="text" name="fname" size="1"/> 
+        <input type="text" name="fname" size="1"/> 
+        <div class="boxed">boxed</div>
+        <div></div>
+    
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li>3- Timed Questions</li>
+        <input type="text" name="fname" size="1"/> 
+        <input type="text" name="fname" size="1"/> 
+      </ul>
+    </div>
+  
+    <header>Number of Questions</header>
+    <input type="text" name="fname" size="1"/>
+    <input type="text" name="fname" size="1"/>
+  
+    <p>The Duration of your Game will be 1 minute 45 seconds</p>
+    
+    <button id="setting">setting</button>
+    <button id="privacy">privacy/GDPR Info</button>
+    <button id="begin-game">start game</button>
+    <button id="Home">Home</button>
+  </section>
+
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-   <script src="api.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
    <script src="assets/js/gamepage-script.js"></script>
 </body>
 </html>
