@@ -6,8 +6,8 @@ const ansContainer2 = document.getElementById("answer-2");
 const ansContainer3 = document.getElementById("answer-3");
 const ansContainer4 = document.getElementById("answer-4");
 const questionImage = document.getElementById("img-answer");
-// const quiz
 
+console.log(questionImage);
 
 const timerContainer = document.getElementById("start-btn"); // This needs changing when a new element is built.
 const scoreContainer = document.getElementById("next-btn"); // This needs changing when a new element is built.
@@ -96,7 +96,7 @@ async function generateNewQuestion () {
         }
     }
     const photo = questionObject.image;
-    console.log(`url(${photo})`);
+    console.log(photo);
     questionImage.style.backgroundImage = `url(${photo})`;
 }
 generateNewQuestion();
@@ -130,8 +130,8 @@ function startTimer() {
         secondsLeft = 15;
         score--;
         scoreContainer.innerText = score;
-        // pushQuestions(questionObject);
-        // pushPhotograph();
+        pushQuestions(questionObject);
+        pushPhotograph();
       }
     }, 1000);
   }
