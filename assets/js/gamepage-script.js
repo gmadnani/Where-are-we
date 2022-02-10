@@ -11,7 +11,7 @@ let quesNum = 0;
 let numQues = 0;
 let flag = 0;
 let score = 0;
-let rightAnswer =[]
+let rightAnswer = [];
 
 const timerContainer = document.getElementById("start-btn"); // This needs changing when a new element is built.
 const scoreContainer = document.getElementById("next-btn"); // This needs changing when a new element is built.
@@ -21,7 +21,7 @@ async function getLocation() {
   const newLocation = await getGeoName();
   const locationPhoto = await getPhoto(newLocation[0]);
   const newLocString = `${newLocation[0]}, ${newLocation[1]}`;
-  rightAnswer = newLocString
+  rightAnswer = newLocString;
   return [newLocString, locationPhoto];
 }
 
@@ -59,7 +59,10 @@ async function getOtherLocations() {
   const threeCities = [];
   while (threeCities.length != 3) {
     const newCity = await getGeoName();
-    if (!threeCities.includes(`${newCity[0]}, ${newCity[1]}`) && !threeCities.includes(rightAnswer)) {
+    if (
+      !threeCities.includes(`${newCity[0]}, ${newCity[1]}`) &&
+      !threeCities.includes(rightAnswer)
+    ) {
       threeCities.push(`${newCity[0]}, ${newCity[1]}`);
     }
   }
@@ -160,7 +163,9 @@ function startTimer() {
     if (flag == 0) {
       if (secondsLeft < 0) {
         secondsLeft = document.querySelector('[name="timeqt"]').value;
-        score--;
+        if (score > 0){
+          score--;
+        }
         scoreContainer.innerText = score;
         generateNewQuestion();
       }
@@ -197,7 +202,7 @@ function saveScore() {
       totalQues: document.querySelector('input[name="quesNum"]:checked').value,
       scores: score,
       time: document.querySelector('[name="timewt"]').value - secondsLeft - 1,
-      totaltime: document.querySelector('[name="timewt"]').value
+      totaltime: document.querySelector('[name="timewt"]').value,
     };
   }
   arrayScore.push(playerscore);
@@ -236,9 +241,11 @@ function displayScore() {
           "/" +
           AllScores[i].totalQues +
           " in " +
-            AllScores[i].time  +
+          AllScores[i].time +
           " seconds " +
-          " of " + AllScores[i].totaltime + "seconds";
+          " of " +
+          AllScores[i].totaltime +
+          "seconds";
       }
       document.getElementById("high-score-list").append(eachscore);
     }
@@ -251,11 +258,12 @@ function clearScores() {
 }
 
 function startquiz() {
-    if (document.getElementById("name").value === "") {
-        alert("please enter your name to start the game");
-        return;
-      }
-      document.getElementById("highest-score").innerHTML = document.getElementById("name").value + " your High Scores are:"
+  if (document.getElementById("name").value === "") {
+    alert("please enter your name to start the game");
+    return;
+  }
+  document.getElementById("highest-score").innerHTML =
+    document.getElementById("name").value + " your High Scores are:";
   document.getElementById("home").style.display = "none";
   document.getElementById("quiz").style.display = "block";
   document.getElementById("highscore").style.display = "none";
