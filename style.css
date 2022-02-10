@@ -1,80 +1,78 @@
-
 :root {
-    --hue-neutral: 200;
-    --hue-wrong: 0;
-    --hue-correct: 145;
-  }
-  
-  body{
-      --hue: var(--hue-neutral);
-      padding: 0;
-      margin: 0;
-      display: flex;
-      width: 100vw;
-      height: 100vw;
-      justify-content: center;
-      align-items: center;
-      background-color: hsl(var(--hue),100%,20%);
-  }
-  body.correct{
-    --hue:var(--hue-correct)
-  }
-  
-  body.wrong {
-      --hue:var(--hue-wrong)
-  }
-  .container{
-      width: 800px;
-      
-      max-width: 80%;
-      background-color: white;
-      border-radius: 5px;
-      padding: 10px;
-      box-shadow: 0 0 10px;
-  }
-  .btn-grid{
-      display: grid;
-      grid-template-columns: repeat(2,auto);
-      gap: 10px;
-      margin: 20px 0;
-  }
-  .btn{
-       --hue: var(--hue-neutral);
-       border: 1px solid hs(var(--hue),100% ,30%);
-       background-color: hsl(var(--hue),100%,50%);
-       border-radius: 5px;
-       padding: 5px 10px;
-       color: rgb(255, 255, 255);
-       outline: none;
-       cursor: pointer;
-      
-  }
-  .btn:hover{
-      border-color: black;
-  }
-  
-  
-   /* .answer{ *
+  --hue-neutral: 200;
+  --hue-wrong: 0;
+  --hue-correct: 145;
+}
+
+body {
+  --hue: var(--hue-neutral);
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vw;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(var(--hue), 100%, 20%);
+}
+body.correct {
+  --hue: var(--hue-correct);
+}
+
+body.wrong {
+  --hue: var(--hue-wrong);
+}
+.container {
+  width: 800px;
+
+  max-width: 80%;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px;
+}
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
+}
+.btn {
+  --hue: var(--hue-neutral);
+  border: 1px solid hs(var(--hue), 100%, 30%);
+  background-color: hsl(var(--hue), 100%, 50%);
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: rgb(255, 255, 255);
+  outline: none;
+  cursor: pointer;
+}
+.btn:hover {
+  border-color: black;
+}
+
+/* .answer{ *
       height: 200px;
       width: 400px;
    /} */
-  
-  
-  #img-answer{
-    max-height: 100%;
-    max-width: 100%;
-     object-fit:contain;
-     width: 100%;
-     height: 500px;
-     background-position: center;
-     background-size: cover;
-     /* background-image: ; */
-  }
 
-  #quiz, #settings, #highscore{
-      display: none;
-  }
-  
-  #wtime{
-      display: none;
-  }
+#img-answer {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  width: 100%;
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  /* background-image: ; */
+}
+
+#quiz,
+#settings,
+#highscore {
+  display: none;
+}
+
+#wtime {
+  display: none;
+}
