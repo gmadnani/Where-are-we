@@ -11,6 +11,7 @@ let quesNum = 0;
 let numQues = 0;
 let flag = 0;
 let score = 0;
+let rightAnswer =[]
 
 const timerContainer = document.getElementById("start-btn"); // This needs changing when a new element is built.
 const scoreContainer = document.getElementById("next-btn"); // This needs changing when a new element is built.
@@ -20,6 +21,7 @@ async function getLocation() {
   const newLocation = await getGeoName();
   const locationPhoto = await getPhoto(newLocation[0]);
   const newLocString = `${newLocation[0]}, ${newLocation[1]}`;
+  rightAnswer = newLocString
   return [newLocString, locationPhoto];
 }
 
@@ -34,7 +36,6 @@ function getGeoName() {
       let country = data[randomNumber].Country.LocalizedName;
       let city = data[randomNumber].LocalizedName;
       array.push(city, country);
-      answer = array;
       return array;
     });
 }
@@ -58,11 +59,10 @@ async function getOtherLocations() {
   const threeCities = [];
   while (threeCities.length != 3) {
     const newCity = await getGeoName();
-    if (!threeCities.includes(newCity[0]) && !threeCities.includes(answer[0])) {
+    if (!threeCities.includes(`${newCity[0]}, ${newCity[1]}`) && !threeCities.includes(rightAnswer)) {
       threeCities.push(`${newCity[0]}, ${newCity[1]}`);
     }
   }
-  // console.log(threeCities)
   return threeCities;
 }
 
