@@ -27,7 +27,7 @@ async function getLocation() {
 
 function getGeoName() {
   var queryURL =
-    "http://dataservice.accuweather.com/locations/v1/topcities/50?apikey=nqkAVAuvzGPmrydtswPleNqPjEwoDmOJ";
+    "https://dataservice.accuweather.com/locations/v1/topcities/50?apikey=nqkAVAuvzGPmrydtswPleNqPjEwoDmOJ";
   let randomNumber = Math.floor(Math.random() * 49);
   var array = [];
   return fetch(queryURL)
