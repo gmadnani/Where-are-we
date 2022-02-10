@@ -145,7 +145,6 @@ answerContainer.addEventListener("click", answerChosen);
 
 // Timer that resets with each new question.
 function timerCheck() {
-  console.log(flag);
   if (flag == 0) {
     return document.querySelector('[name="timeqt"]').value;
   } else {
@@ -155,7 +154,6 @@ function timerCheck() {
 
 function startTimer() {
   secondsLeft = timerCheck();
-  console.log("seconds:" + secondsLeft);
   const timerInterval = setInterval(function () {
     timerContainer.innerHTML = secondsLeft + " seconds remaining.";
     secondsLeft--;
@@ -198,7 +196,8 @@ function saveScore() {
       quizType: "Quiz timer",
       totalQues: document.querySelector('input[name="quesNum"]:checked').value,
       scores: score,
-      time: secondsLeft,
+      time: document.querySelector('[name="timewt"]').value - secondsLeft - 1,
+      totaltime: document.querySelector('[name="timewt"]').value
     };
   }
   arrayScore.push(playerscore);
@@ -237,10 +236,9 @@ function displayScore() {
           "/" +
           AllScores[i].totalQues +
           " in " +
-          (document.querySelector('[name="timewt"]').value -
-            AllScores[i].time -
-            1) +
-          "seconds";
+            AllScores[i].time  +
+          " seconds " +
+          " of " + AllScores[i].totaltime + "seconds";
       }
       document.getElementById("high-score-list").append(eachscore);
     }
@@ -281,4 +279,11 @@ function timerwCheck() {
   flag = 1;
   document.getElementById("qtime").style.display = "none";
   document.getElementById("wtime").style.display = "block";
+}
+
+function gohome() {
+  document.getElementById("home").style.display = "block";
+  document.getElementById("quiz").style.display = "none";
+  document.getElementById("highscore").style.display = "none";
+  document.getElementById("settings").style.display = "none";
 }
