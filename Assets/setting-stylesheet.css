@@ -142,7 +142,10 @@ overflow:hidden;
 }
 
 .containerchoice {
-    background-color: hsl(240,100%,90%);
+    background:linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(./Images/world-map-lisa-middleton.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
     height:200vh;
     width:100vw;
     padding:40px;
@@ -255,26 +258,28 @@ p {
     margin: 20px 0; 
   }
 
-button {
+ 
+
+/*{
     --hue: var(--hue-neutral);
     border: 1px solid hs(var(--hue),100% ,30%);
     /* background-color: hsl(260, 50%, 61%); */
     background: linear-gradient(to top,hsl(260, 50%, 61%) ,rgb(229, 212, 230));
     /* background: hsl(240, 100%, 90%) */
-    /* transition: all .8s; */
+    /* transition: all .8s; 
     border-radius: 40px;
     padding: 10px 10px;
     color: rgb(240, 215, 215);
     outline: none;
-    /* cursor: pointer; */
+    /* cursor: pointer; 
     font-family: Nova Square;
    font-size: 18px;  
  
-    }
+    }*/
 
 
 
-/*{
+    button {
     background-color: hsl(248,54%,58%);
     color: white;
     width:150px;
@@ -286,8 +291,7 @@ button {
     margin-inline-end: 50px;
     justify-content: center;
     justify-content: space-between;
-   
-}*/
+    } 
 
 
 
