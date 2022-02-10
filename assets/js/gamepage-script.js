@@ -7,10 +7,12 @@ const ansContainer3 = document.getElementById("answer-3");
 const ansContainer4 = document.getElementById("answer-4");
 const questionImage = document.getElementById("img-answer");
 
+
 let quesNum = 0;
 let numQues = document.querySelector('input[name="quesNum"]:checked').value; 
 let answer = [];
 let flag = 0;
+var seconds = 0;
 
 const timerContainer = document.getElementById("start-btn"); // This needs changing when a new element is built.
 const scoreContainer = document.getElementById("next-btn"); // This needs changing when a new element is built.
@@ -79,9 +81,6 @@ async function generateQuestionObject() {
 
 // Function to push the answer options to the HTML in a random order.
 async function generateNewQuestion () {
-    if(flag == 0){
-        secondsLeft = document.querySelector('[name="timeqt"]').value;
-    }
     quesNum++;
     if (quesNum<numQues){
         const questionObject = await generateQuestionObject();
@@ -162,11 +161,14 @@ function startTimer() {
             generateNewQuestion();
         }
         if(quesNum == numQues){
+            seconds = secondsLeft;
             clearInterval(timerInterval);
+            
         }
     }
         else{
-            if (secondsLeft < 0 && quesNum == numQues) {
+            if (secondsLeft == 0 || quesNum == numQues) {
+                seconds = secondsLeft;
                 clearInterval(timerInterval);
         }
     }
@@ -179,21 +181,30 @@ function saveScore(){
     if (storedScore) {
         arrayScore = JSON.parse(storedScore);
     }
-    var playerscore = {
-    //   name: document.getElementById("name").value,
-    // score: document.getElementById("newscore").textContent,
-    totalQues: document.querySelector('input[name="quesNum"]:checked').value,
-    scores: score
-    };
-
+    if (flag==0){
+        var playerscore = {
+            quizType: "Questions timer",
+            totalQues: document.querySelector('input[name="quesNum"]:checked').value,
+            scores: score
+        };
+    }
+    else{
+        var playerscore = {
+            quizType: "Quiz timer",
+            totalQues: document.querySelector('input[name="quesNum"]:checked').value,
+            scores: score,
+            time: secondsLeft
+        };
+    }
+    console.log(secondsLeft)
     arrayScore.push(playerscore);
 
     var savingArray = JSON.stringify(arrayScore);
     window.localStorage.setItem("scores", savingArray);
-    var savedScores = localStorage.getItem("scores");
 }
 
 function displayScore(){
+    document.getElementById("high-score-list").innerHTML = "";
     document.getElementById("home").style.display = "none";
     document.getElementById("quiz").style.display = "none";
     document.getElementById("highscore").style.display = "block";
@@ -207,7 +218,12 @@ function displayScore(){
     
         for (var i = 0; i < AllScores.length; i++) {
           var eachscore = document.createElement("p");
-          eachscore.innerHTML =AllScores[i].scores + "/" + AllScores[i].totalQues;
+          if (!AllScores[i].time){
+            eachscore.innerHTML =AllScores[i].quizType + " : "+ AllScores[i].scores + "/" + AllScores[i].totalQues;
+          }
+          else{
+            eachscore.innerHTML =AllScores[i].quizType + " : "+ AllScores[i].scores + "/" + AllScores[i].totalQues + " in " + AllScores[i].time + "seconds";
+          }
           document.getElementById("high-score-list").append(eachscore);
         }
       }
@@ -220,10 +236,13 @@ function clearScores(){
 
 
 function startquiz(){
+    
     document.getElementById("home").style.display = "none";
     document.getElementById("quiz").style.display = "block";
     document.getElementById("highscore").style.display = "none";
     document.getElementById("settings").style.display = "none";
+    score = 0;
+    scoreContainer.innerText = score;
     quesNum = -1;
     startTimer();
     generateNewQuestion();
