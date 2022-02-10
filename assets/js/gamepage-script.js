@@ -251,6 +251,11 @@ function clearScores() {
 }
 
 function startquiz() {
+    if (document.getElementById("name").value === "") {
+        alert("please enter your name to start the game");
+        return;
+      }
+      document.getElementById("highest-score").innerHTML = document.getElementById("name").value + " your High Scores are:"
   document.getElementById("home").style.display = "none";
   document.getElementById("quiz").style.display = "block";
   document.getElementById("highscore").style.display = "none";

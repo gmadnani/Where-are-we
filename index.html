@@ -23,6 +23,10 @@
             <div class="rule">4. When you begin the quiz you cannot exit</div>
             <div class="rule">5. When you press begin the the quiz start</div>
           </div>
+          <form>
+              Enter your name to begin the game: <input id="name" type="text" />
+          </form>
+         
           <div class="buttons">
             <button onclick="opensettings()">settings</button>
             <button onclick="startquiz()">start</button>
@@ -58,7 +62,7 @@
 </section>
 
 <section id= "highscore">
-        <h1 class="highest-score">High Scores</h1>
+        <h1 id="highest-score"></h1>
         <div id="high-score-list"></div>
         <div>
           <button class="btn" onclick="opensettings()">Change settings</button>
