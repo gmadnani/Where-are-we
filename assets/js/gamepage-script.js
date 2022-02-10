@@ -10,6 +10,7 @@ const questionImage = document.getElementById("img-answer");
 let quesNum = 0;
 let numQues = document.querySelector('input[name="quesNum"]:checked').value; 
 let answer = [];
+let flag = 0;
 
 const timerContainer = document.getElementById("start-btn"); // This needs changing when a new element is built.
 const scoreContainer = document.getElementById("next-btn"); // This needs changing when a new element is built.
@@ -78,7 +79,9 @@ async function generateQuestionObject() {
 
 // Function to push the answer options to the HTML in a random order.
 async function generateNewQuestion () {
-    secondsLeft = document.querySelector('[name="timeqt"]').value;
+    if(flag == 0){
+        secondsLeft = document.querySelector('[name="timeqt"]').value;
+    }
     quesNum++;
     if (quesNum<numQues){
         const questionObject = await generateQuestionObject();
@@ -125,23 +128,45 @@ const answerChosen = event => {
         score++; // This needs to be pushed to the page, currently no container for it. 
     }
     scoreContainer.innerText = score;
+    if(flag == 0){
     secondsLeft = document.querySelector('[name="timeqt"]').value;
     generateNewQuestion();
+    }
+    else{
+        generateNewQuestion();
+    }
 }
 answerContainer.addEventListener("click", answerChosen);
 
 // Timer that resets with each new question.
-let secondsLeft = document.querySelector('[name="timeqt"]').value;
+function timerCheck(){
+    console.log(flag);
+    if (flag == 0){
+         return document.querySelector('[name="timeqt"]').value;
+    }
+    else{
+        return document.querySelector('[name="timewt"]').value;
+    }
+}
+
 const timerInterval = setInterval(startTimer, 1000);
 function startTimer() {
-    // let secondsLeft = 15;
+    secondsLeft = timerCheck();
+    console.log("seconds:" + secondsLeft)
       timerContainer.innerHTML = secondsLeft + " seconds remaining.";
       secondsLeft--;
-      if (secondsLeft < 0) {
-        secondsLeft = document.querySelector('[name="timeqt"]').value;
-        score--;
-        scoreContainer.innerText = score;
-        generateNewQuestion();
+      if (flag == 0){
+        if (secondsLeft < 0) {
+            secondsLeft = document.querySelector('[name="timeqt"]').value;
+            score--;
+            scoreContainer.innerText = score;
+            generateNewQuestion();
+        }
+    }
+        else{
+            if (secondsLeft < 0) {
+                clearInterval(timerInterval);
+        }
     }
   }
 
@@ -191,8 +216,6 @@ function clearScores(){
 }
 
 
-
-
 function startquiz(){
     document.getElementById("home").style.display = "none";
     document.getElementById("quiz").style.display = "block";
@@ -202,7 +225,8 @@ function startquiz(){
     startTimer();
     generateNewQuestion();
     console.log(document.querySelector('input[name="Timer"]:checked').value);
-    console.log(document.querySelector('[name="timeqt"]').value);
+    console.log(flag);
+    // console.log(document.querySelector('[name="timeqt"]').value);
     console.log(document.querySelector('[name="timewt"]').value);
     console.log(document.querySelector('input[name="quesNum"]:checked').value);
 }
@@ -216,14 +240,12 @@ function opensettings(){
 }
 
 function timerqCheck(){
+    flag = 0;
     document.getElementById("qtime").style.display = "block";
     document.getElementById("wtime").style.display = "none";
 }
 function timerwCheck(){
+    flag = 1;
     document.getElementById("qtime").style.display = "none";
     document.getElementById("wtime").style.display = "block";
 }
-// Function to collect user input / their name.
-// Function to push high scores and username to local storage.
-// Function to retrieve high scores and username from local storage.
-// Function to restart the game.
