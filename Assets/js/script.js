@@ -1,13 +1,20 @@
+$(document).ready(function() {
+
 function getSelectValue (){
 var selectedValue = document.getElementById("selectMe").value;
 console.log (selectedValue);
-
-
-/*Duration of time*/
-let moment = durationofGame(selectedValue * 15).seconds
-let durationofGame = moment().format('H:mm:ss').show;
+return getSelectValue ()
 }
 
+let input =$("Input");
+let durationofGame =$("durationofGame");
+
+/*Duration of time*/
+let =input = selectedValue * 15 
+let = durationofGame = moment().format('H:mm:ss').show;
+console.log (seconds)
+
+})
 // convert seconds to minutes
 /* OPTION1
 function timeConvert(){
