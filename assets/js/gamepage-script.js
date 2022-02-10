@@ -109,7 +109,6 @@ async function generateNewQuestion () {
         questionImage.style.backgroundImage = `url(${photo})`;
     }
     else{
-        clearInterval(timerInterval);
         saveScore();
         displayScore();
     }
@@ -149,10 +148,10 @@ function timerCheck(){
     }
 }
 
-const timerInterval = setInterval(startTimer, 1000);
 function startTimer() {
     secondsLeft = timerCheck();
     console.log("seconds:" + secondsLeft)
+    const timerInterval = setInterval(function () {
       timerContainer.innerHTML = secondsLeft + " seconds remaining.";
       secondsLeft--;
       if (flag == 0){
@@ -162,13 +161,17 @@ function startTimer() {
             scoreContainer.innerText = score;
             generateNewQuestion();
         }
+        if(quesNum == numQues){
+            clearInterval(timerInterval);
+        }
     }
         else{
-            if (secondsLeft < 0) {
+            if (secondsLeft < 0 && quesNum == numQues) {
                 clearInterval(timerInterval);
         }
     }
-  }
+    },1000)
+}
 
 function saveScore(){
     var storedScore = localStorage.getItem("scores");
