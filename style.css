@@ -71,7 +71,10 @@
      /* background-image: ; */
   }
 
-  #home, #settings, #highscore{
+  #quiz, #settings, #highscore{
       display: none;
   }
   
+  #wtime{
+      display: none;
+  }

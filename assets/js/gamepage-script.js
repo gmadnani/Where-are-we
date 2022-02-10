@@ -7,7 +7,9 @@ const ansContainer3 = document.getElementById("answer-3");
 const ansContainer4 = document.getElementById("answer-4");
 const questionImage = document.getElementById("img-answer");
 
-console.log(questionImage);
+let quesNum = 0;
+let numQues = document.querySelector('input[name="quesNum"]:checked').value; 
+let answer = [];
 
 const timerContainer = document.getElementById("start-btn"); // This needs changing when a new element is built.
 const scoreContainer = document.getElementById("next-btn"); // This needs changing when a new element is built.
@@ -30,6 +32,7 @@ function getGeoName(){
           let country = data[randomNumber].Country.LocalizedName;
           let city = data[randomNumber].LocalizedName
           array.push(city, country)
+          answer = array;
           return (array);
         })
 }
@@ -50,10 +53,11 @@ async function getOtherLocations () {
     const threeCities = [];
     while (threeCities.length != 3) {
         const newCity = await getGeoName();
-        if (!threeCities.includes(newCity)) {
+        if (!threeCities.includes(newCity[0]) && !threeCities.includes(answer[0])) {
             threeCities.push(`${newCity[0]}, ${newCity[1]}`);
         }
     }
+    // console.log(threeCities)
     return threeCities;
 }
 
@@ -74,35 +78,44 @@ async function generateQuestionObject() {
 
 // Function to push the answer options to the HTML in a random order.
 async function generateNewQuestion () {
-    const questionObject = await generateQuestionObject();
-    const allAnswers = [questionObject.answer1, questionObject.answer2, questionObject.answer3, questionObject.answer4];
-    const allPlacements = [ansContainer1, ansContainer2, ansContainer3, ansContainer4];
-    const usedPlacements = [];
+    secondsLeft = document.querySelector('[name="timeqt"]').value;
+    quesNum++;
+    if (quesNum<numQues){
+        const questionObject = await generateQuestionObject();
+        const allAnswers = [questionObject.answer1, questionObject.answer2, questionObject.answer3, questionObject.answer4];
+        const allPlacements = [ansContainer1, ansContainer2, ansContainer3, ansContainer4];
+        const usedPlacements = [];
 
-    const correctPlacement = Math.floor(Math.random() * 4);
-    allPlacements[correctPlacement].innerHTML = allAnswers[0];
-    allPlacements[correctPlacement].setAttribute("class", "btn correct");
-    
-    usedPlacements.push(allPlacements[correctPlacement]);
+        const correctPlacement = Math.floor(Math.random() * 4);
+        allPlacements[correctPlacement].innerHTML = allAnswers[0];
+        allPlacements[correctPlacement].setAttribute("class", "btn correct");
+        
+        usedPlacements.push(allPlacements[correctPlacement]);
 
-    while (usedPlacements.length < 4) {
-        const nextPosition = Math.floor(Math.random() * 4);
-        const nextPlacement = allPlacements[nextPosition];
-        const nextAnswer = usedPlacements.length;
-        if (!usedPlacements.includes(nextPlacement)) {
-            nextPlacement.innerHTML = allAnswers[nextAnswer];
-            nextPlacement.setAttribute("class", "btn incorrect");
-            usedPlacements.push(nextPlacement);
+        while (usedPlacements.length < 4) {
+            const nextPosition = Math.floor(Math.random() * 4);
+            const nextPlacement = allPlacements[nextPosition];
+            const nextAnswer = usedPlacements.length;
+            if (!usedPlacements.includes(nextPlacement)) {
+                nextPlacement.innerHTML = allAnswers[nextAnswer];
+                nextPlacement.setAttribute("class", "btn incorrect");
+                usedPlacements.push(nextPlacement);
+            }
         }
+        const photo = questionObject.image;
+        questionImage.style.backgroundImage = `url(${photo})`;
     }
-    const photo = questionObject.image;
-    console.log(photo);
-    questionImage.style.backgroundImage = `url(${photo})`;
+    else{
+        clearInterval(timerInterval);
+        saveScore();
+        displayScore();
+    }
 }
-generateNewQuestion();
+
 
 // Function to store and display scores.
 let score = 0;
+
 
 // Event listener for answer container. 
 const answerChosen = event => {
@@ -110,32 +123,106 @@ const answerChosen = event => {
     const correctAnswer = document.querySelector(".correct");
     if (answerPicked === correctAnswer) {
         score++; // This needs to be pushed to the page, currently no container for it. 
-    } else {
-        score--; // This needs to be pushed to the page.
-    };
+    }
     scoreContainer.innerText = score;
-    secondsLeft = 15;
+    secondsLeft = document.querySelector('[name="timeqt"]').value;
     generateNewQuestion();
 }
 answerContainer.addEventListener("click", answerChosen);
 
 // Timer that resets with each new question.
-startTimer();
-let secondsLeft = 15;
+let secondsLeft = document.querySelector('[name="timeqt"]').value;
+const timerInterval = setInterval(startTimer, 1000);
 function startTimer() {
-    const timerInterval = setInterval(function () {
+    // let secondsLeft = 15;
       timerContainer.innerHTML = secondsLeft + " seconds remaining.";
       secondsLeft--;
       if (secondsLeft < 0) {
-        secondsLeft = 15;
+        secondsLeft = document.querySelector('[name="timeqt"]').value;
         score--;
         scoreContainer.innerText = score;
-        pushQuestions(questionObject);
-        pushPhotograph();
-      }
-    }, 1000);
+        generateNewQuestion();
+    }
   }
 
+function saveScore(){
+    var storedScore = localStorage.getItem("scores");
+    var arrayScore = [];
+    if (storedScore) {
+        arrayScore = JSON.parse(storedScore);
+    }
+    var playerscore = {
+    //   name: document.getElementById("name").value,
+    // score: document.getElementById("newscore").textContent,
+    totalQues: document.querySelector('input[name="quesNum"]:checked').value,
+    scores: score
+    };
+
+    arrayScore.push(playerscore);
+
+    var savingArray = JSON.stringify(arrayScore);
+    window.localStorage.setItem("scores", savingArray);
+    var savedScores = localStorage.getItem("scores");
+}
+
+function displayScore(){
+    document.getElementById("home").style.display = "none";
+    document.getElementById("quiz").style.display = "none";
+    document.getElementById("highscore").style.display = "block";
+    document.getElementById("settings").style.display = "none";
+    var savedScores = localStorage.getItem("scores");
+    if (savedScores == null) {
+        return;
+      }
+      if (savedScores) {
+        var AllScores = JSON.parse(savedScores);
+    
+        for (var i = 0; i < AllScores.length; i++) {
+          var eachscore = document.createElement("p");
+          eachscore.innerHTML =AllScores[i].scores + "/" + AllScores[i].totalQues;
+          document.getElementById("high-score-list").append(eachscore);
+        }
+      }
+}
+
+function clearScores(){
+    localStorage.removeItem("scores");
+    document.getElementById("high-score-list").innerHTML = "";
+}
+
+
+
+
+function startquiz(){
+    document.getElementById("home").style.display = "none";
+    document.getElementById("quiz").style.display = "block";
+    document.getElementById("highscore").style.display = "none";
+    document.getElementById("settings").style.display = "none";
+    quesNum = -1;
+    startTimer();
+    generateNewQuestion();
+    console.log(document.querySelector('input[name="Timer"]:checked').value);
+    console.log(document.querySelector('[name="timeqt"]').value);
+    console.log(document.querySelector('[name="timewt"]').value);
+    console.log(document.querySelector('input[name="quesNum"]:checked').value);
+}
+
+function opensettings(){
+    document.getElementById("home").style.display = "none";
+    document.getElementById("quiz").style.display = "none";
+    document.getElementById("highscore").style.display = "none";
+    document.getElementById("settings").style.display = "block";
+
+}
+
+function timerqCheck(){
+    document.getElementById("qtime").style.display = "block";
+    document.getElementById("wtime").style.display = "none";
+}
+function timerwCheck(){
+    document.getElementById("qtime").style.display = "none";
+    document.getElementById("wtime").style.display = "block";
+}
 // Function to collect user input / their name.
 // Function to push high scores and username to local storage.
 // Function to retrieve high scores and username from local storage.
