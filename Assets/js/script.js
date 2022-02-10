@@ -1,6 +1,24 @@
+function getSelectValue (){
+var selectedValue = document.getElementById("selectMe").value;
+console.log (selectedValue);
+}
 
 
 
+
+
+
+/*function isChecked () {
+    var five = document.getElementById('5').checked;
+    var ten = document.getElementById('10').checked;
+    var fifteen = document.getElementById('15').checked;
+    var twenty = document.getElementById('20').checked;
+
+    if (five==false && ten==false && fifteen==false && twenty==false)(
+        alert('please select a timer option'))
+    return false;
+    
+}
 
 
 /*$(document).ready(function (){
