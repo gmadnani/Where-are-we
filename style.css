@@ -112,18 +112,24 @@ body:before {
 }
 
 #img-answer {
-  width: 800px;
-  max-width: 100%;
   background-color: white;
   border-radius: 5px;
   padding: 20px;
   box-shadow: 0 0 10px;
   object-fit: contain;
-  width: 800px;
+  width: 750px;
   height: 500px;
   background-position: center;
   background-size: cover;
 }
+
 #wtime {
   display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  #img-answer {
+    width: 600px;
+    height: 450px;
+  }
 }
