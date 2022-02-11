@@ -1,0 +1,54 @@
+header {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url(./BUTTERFLY\ Art\ Print\ by\ Maalavidaa.jpeg);
+}
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+#This-highscore-container {
+  display: flex;
+  justify-content: center;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  height: 300px;
+
+  max-width: 100%;
+  background-color: black;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px;
+}
+.container1 {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  height: 200px;
+
+  max-width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px;
+}
+
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+
+}

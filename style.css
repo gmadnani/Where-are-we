@@ -1,76 +1,4 @@
-/* :root {
-  --hue-neutral: 200;
-  --hue-wrong: 0;
-  --hue-correct: 145;
-}
-
-body {
-  --hue: var(--hue-neutral);
-  padding: 0;
-  margin: 0;
-  display: flex;
-  width: 100vw;
-  justify-content: center;
-  align-items: center;
-  background-color: hsl(var(--hue), 100%, 20%);
-}
-body.correct {
-  --hue: var(--hue-correct);
-}
-
-body.wrong {
-  --hue: var(--hue-wrong);
-}
-.container {
-  width: 800px;
-
-  max-width: 80%;
-  background-color: white;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 0 10px;
-}
-.btn-grid {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 10px;
-  margin: 20px 0;
-}
-.btn {
-  --hue: var(--hue-neutral);
-  border: 1px solid hs(var(--hue), 100%, 30%);
-  background-color: hsl(var(--hue), 100%, 50%);
-  border-radius: 5px;
-  padding: 5px 10px;
-  color: rgb(255, 255, 255);
-  outline: none;
-  cursor: pointer;
-}
-.btn:hover {
-  border-color: black;
-}
-
-#img-answer {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-  width: 100%;
-  height: 500px;
-  background-position: center;
-  background-size: cover;
-}
-
-#quiz,
-#settings,
-#highscore {
-  display: none;
-}
-
-#wtime {
-  display: none;
-} */
-
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&family=Nova+Square&family=Roboto+Mono:wght@500&family=Roboto:wght@700&family=Rubik:ital,wght@1,300&family=Russo+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&family=Nova+Square&family=Roboto+Mono:wght@500&family=Roboto:wght@700&family=Rubik:ital,wght@1,300&family=Russo+One&display=swap");
 .rule_box {
   position: absolute;
   top: 50%;
@@ -81,37 +9,34 @@ body.wrong {
   background-color: rgb(255, 227, 178);
   font-family: Nova Square;
 }
-/* body{
-  background:linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(./Assets/Images/world-map-lisa-middleton.jpg
-  );
-} */
-.rule_box.rule_title{
-  border-bottom: 1px solid ;
+.rule_box.rule_title {
+  border-bottom: 1px solid;
 }
 a {
   display: none;
 }
-.rule-list{
+.rule-list {
   line-height: 1.5em;
 }
-h2{
+h2 {
   color: rgba(192, 37, 17, 0.671);
 }
-h1{
-  color: rgba(179, 165, 154);
+h1 {
+  font-size: 60px;
+  padding: auto;
+  color: rgb(0, 155, 147);
 }
-title{
+title {
   justify-content: center;
 }
-button{
-
+button {
   font-family: Nova Square;
 }
-button:hover{
-  background:linear-gradient(rgba(143, 131, 25, 0.5), rgba(255,255,255,0.5)), url(./Assets/Images/world-map-lisa-middleton.jpg
-  );
+button:hover {
+  background: linear-gradient(rgba(143, 131, 25, 0.5), rgba(255, 255, 255, 0.5)),
+    url(./Assets/Images/world-map-lisa-middleton.jpg);
 }
-button:focus{
+button:focus {
   outline: 0;
 }
 .rule-box {
@@ -127,87 +52,78 @@ button:focus{
   display: none;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&family=Nova+Square&family=Roboto+Mono:wght@500&family=Roboto:wght@700&family=Rubik:ital,wght@1,300&family=Russo+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&family=Nova+Square&family=Roboto+Mono:wght@500&family=Roboto:wght@700&family=Rubik:ital,wght@1,300&family=Russo+One&display=swap");
 
 :root {
-    --hue-neutral: 200;
-    --hue-wrong: 0;
-    --hue-correct: 145;
-    font-family: Nova Square;
-  }
-  
-  
-  body{
-     background:linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(./Assets/Images/world-map-lisa-middleton.jpg
-     );
-     background-position: center;
-     background-size: cover;
-      --hue:hsl(240, 100%, 90%);
-      padding: 0;
-      margin: 0;
-      display: flex;
-      width: 100vw;
-      height: 100vw;
-      justify-content: center;
-      align-items: center;
-      background-color: hsl(240, 100%, 90%);
-      }
-      body:before{
-        /* background-image: url(./world-map-lisa-middleton.jpg); */
-        opacity: 0.6;
-      }
-      
-  .container{
-      width: 800px;
-      max-width: 100%;
-      background-color: white;
-      border-radius: 5px;
-      padding: 20px;
-      box-shadow: 0 0 10px;
+  --hue-neutral: 200;
+  --hue-wrong: 0;
+  --hue-correct: 145;
+  font-family: Nova Square;
+}
 
-     }
+body {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url(./Assets/Images/world-map-lisa-middleton.jpg);
+  background-position: center;
+  background-size: cover;
+  --hue: hsl(240, 100%, 90%);
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vw;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(240, 100%, 90%);
+}
+body:before {
+  opacity: 0.6;
+}
 
-  .btn-grid{
-      display: grid;
-      grid-template-columns: repeat(2,auto);
-      gap: 10px;
-      margin: 20px 0; 
-    }
-  .btn{
-       --hue: var(--hue-neutral);
-       border: 1px solid hs(var(--hue),100% ,30%);
-       background: linear-gradient(to top,hsl(36, 100%, 84%) ,rgb(212, 226, 230));
-       /* background: hsl(240, 100%, 90%) */
-       /* transition: all .8s; */
-       border-radius: 40px;
-       padding: 10px 10px;
-       color: rgb(0, 0, 0);
-       outline: none;
-       /* cursor: pointer; */
-       font-family: Nova Square;
-      font-size: 18px;  
-    
-       }
-      
-  .btn:hover{
-      background: linear-gradient(to bottom,hsl(36, 50%, 61%) ,rgb(212, 226, 230));
-      transition: all 6s;
-      cursor: pointer;
-    
-    }
-  .btn:focus{
-      outline: 0;
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
+}
+.btn {
+  --hue: var(--hue-neutral);
+  border: 1px solid hs(var(--hue), 100%, 30%);
+  background: linear-gradient(to top, hsl(0, 50%, 61%), rgb(212, 226, 230));
+  border-radius: 40px;
+  padding: 10px 10px;
+  color: rgb(0, 0, 0);
+  outline: none;
+  font-family: Nova Square;
+  font-size: 18px;
+  margin: 2px;
+}
 
-      }
-  
-  
-    #img-answer {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-    width: 100%;
-    height: 500px;
-    background-position: center;
-    background-size: cover;
-    }
-  
+.btn:hover {
+  background: linear-gradient(to bottom, hsl(0, 50%, 61%), rgb(212, 226, 230));
+  transition: all 6s;
+  cursor: pointer;
+}
+.btn:focus {
+  outline: 0;
+}
+
+#img-answer {
+  width: 800px;
+  max-width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px;
+  object-fit: contain;
+  width: 800px;
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+}
+#wtime {
+  display: none;
+}

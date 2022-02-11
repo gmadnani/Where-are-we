@@ -163,7 +163,7 @@ function startTimer() {
     if (flag == 0) {
       if (secondsLeft < 0) {
         secondsLeft = document.querySelector('[name="timeqt"]').value;
-        if (score > 0){
+        if (score > 0) {
           score--;
         }
         scoreContainer.innerText = score;
@@ -245,7 +245,7 @@ function displayScore() {
           " seconds " +
           " of " +
           AllScores[i].totaltime +
-          "seconds";
+          " seconds";
       }
       document.getElementById("high-score-list").append(eachscore);
     }
@@ -259,7 +259,7 @@ function clearScores() {
 
 function startquiz() {
   if (document.getElementById("name").value === "") {
-    alert("please enter your name to start the game");
+    alert("please type your name to start the game");
     return;
   }
   document.getElementById("highest-score").innerHTML =
@@ -277,6 +277,10 @@ function startquiz() {
 }
 
 function opensettings() {
+  if (document.getElementById("name").value === "") {
+    alert("Please type your name to open the settings!");
+    return;
+  }
   document.getElementById("home").style.display = "none";
   document.getElementById("quiz").style.display = "none";
   document.getElementById("highscore").style.display = "none";
