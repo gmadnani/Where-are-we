@@ -225,7 +225,7 @@ function displayScore() {
     var AllScores = JSON.parse(savedScores);
 
     for (var i = 0; i < AllScores.length; i++) {
-      var eachscore = document.createElement("p");
+      var eachscore = document.createElement("h3");
       if (!AllScores[i].time) {
         eachscore.innerHTML =
           AllScores[i].quizType +

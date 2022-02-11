@@ -19,12 +19,17 @@ a {
   line-height: 1.5em;
 }
 h2 {
+  font-size: 40px;
   color: rgba(192, 37, 17, 0.671);
 }
 h1 {
   font-size: 60px;
   padding: auto;
   color: rgb(0, 155, 147);
+}
+
+h3{
+  font-size: 25px;
 }
 title {
   justify-content: center;
@@ -40,9 +45,10 @@ button:focus {
   outline: 0;
 }
 .rule-box {
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
+  right: 50%;
   padding: 75px 70px;
 }
 
@@ -94,12 +100,12 @@ body:before {
   border: 1px solid hs(var(--hue), 100%, 30%);
   background: linear-gradient(to top, hsl(0, 50%, 61%), rgb(212, 226, 230));
   border-radius: 40px;
-  padding: 10px 10px;
+  /* padding: 10px 10px 10px 10px; */
   color: rgb(0, 0, 0);
   outline: none;
-  font-family: Nova Square;
+  /* font-family: Nova Square; */
   font-size: 18px;
-  margin: 2px;
+  margin: 3px;
 }
 
 .btn:hover {
