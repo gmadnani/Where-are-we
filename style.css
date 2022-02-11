@@ -1,34 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&family=Nova+Square&family=Roboto+Mono:wght@500&family=Roboto:wght@700&family=Rubik:ital,wght@1,300&family=Russo+One&display=swap");
+.rule_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 75px 70px;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: rgb(255, 227, 178);
+  font-family: Nova Square;
+}
+.rule_box.rule_title {
+  border-bottom: 1px solid;
+}
+a {
+  display: none;
+}
+.rule-list {
+  line-height: 1.5em;
+}
+h2 {
+  font-size: 40px;
+  color: rgba(192, 37, 17, 0.671);
+}
+h1 {
+  font-size: 60px;
+  padding: auto;
+  color: rgb(0, 155, 147);
+}
+
+h3{
+  font-size: 25px;
+}
+title {
+  justify-content: center;
+}
+button {
+  font-family: Nova Square;
+}
+button:hover {
+  background: linear-gradient(rgba(143, 131, 25, 0.5), rgba(255, 255, 255, 0.5)),
+    url(./Assets/Images/world-map-lisa-middleton.jpg);
+}
+button:focus {
+  outline: 0;
+}
+.rule-box {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+  padding: 75px 70px;
+}
+
+#quiz,
+#settings,
+#highscore {
+  display: none;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&family=Nova+Square&family=Roboto+Mono:wght@500&family=Roboto:wght@700&family=Rubik:ital,wght@1,300&family=Russo+One&display=swap");
+
 :root {
   --hue-neutral: 200;
   --hue-wrong: 0;
   --hue-correct: 145;
+  font-family: Nova Square;
 }
 
 body {
-  --hue: var(--hue-neutral);
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url(./Assets/Images/world-map-lisa-middleton.jpg);
+  background-position: center;
+  background-size: cover;
+  --hue: hsl(240, 100%, 90%);
   padding: 0;
   margin: 0;
   display: flex;
   width: 100vw;
+  height: 100vw;
   justify-content: center;
   align-items: center;
+  background-color: hsl(240, 100%, 90%);
 }
-body.correct {
-  --hue: var(--hue-correct);
+body:before {
+  opacity: 0.6;
 }
 
-body.wrong {
-  --hue: var(--hue-wrong);
-}
-.container {
-  width: 800px;
-
-  max-width: 80%;
-  background-color: white;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 0 10px;
-}
 .btn-grid {
   display: grid;
   grid-template-columns: repeat(2, auto);
@@ -38,39 +98,44 @@ body.wrong {
 .btn {
   --hue: var(--hue-neutral);
   border: 1px solid hs(var(--hue), 100%, 30%);
-  background-color: hsl(var(--hue), 100%, 50%);
-  border-radius: 5px;
-  padding: 5px 10px;
-  color: rgb(255, 255, 255);
+  background: linear-gradient(to top, hsl(0, 50%, 61%), rgb(212, 226, 230));
+  border-radius: 40px;
+  /* padding: 10px 10px 10px 10px; */
+  color: rgb(0, 0, 0);
   outline: none;
+  /* font-family: Nova Square; */
+  font-size: 18px;
+  margin: 3px;
+}
+
+.btn:hover {
+  background: linear-gradient(to bottom, hsl(0, 50%, 61%), rgb(212, 226, 230));
+  transition: all 6s;
   cursor: pointer;
 }
-.btn:hover {
-  border-color: black;
+.btn:focus {
+  outline: 0;
 }
 
-/* .answer{ *
-      height: 200px;
-      width: 400px;
-   /} */
-
 #img-answer {
-  max-height: 100%;
-  max-width: 100%;
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px;
   object-fit: contain;
-  width: 100%;
+  width: 750px;
   height: 500px;
   background-position: center;
   background-size: cover;
-  /* background-image: ; */
-}
-
-#quiz,
-#settings,
-#highscore {
-  display: none;
 }
 
 #wtime {
   display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  #img-answer {
+    width: 600px;
+    height: 450px;
+  }
 }
