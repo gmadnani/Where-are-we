@@ -1,6 +1,6 @@
 
 <div align="center">
-  <img src="assets/Images/Team-Arch.jpeg" alt="Team-Arch" width="400" height="250">
+  <img src="Assets/Images/Team-Arch.jpeg" alt="Team-Arch" width="400" height="250">
 </div>
 
 
@@ -21,7 +21,7 @@
 <!-- Preview -->
 <p align="center">
   <a href="">
-    <img src="assets/Images/game.png" width="300" height="250"/>
+    <img src="Assets/Images/game.png" width="300" height="250"/>
   </a>
 </p>
 <br/>
