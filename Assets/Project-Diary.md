@@ -60,9 +60,7 @@ Front-end Developer and Technical Lead
 
 During the course of the next 24 hours, Trello was identified and set up as the project management tool and Skeleton was identified as a CSS framework.
 
-![Minion](./images/Trello)
-![Minion](./images/Trello)
-![Minion](./images/Trello)
+
 
 
 
@@ -124,9 +122,7 @@ Front-end Developer and Technical Lead
 
 During the course of the next 24 hours, Trello was identified and set up as the project management tool and Skeleton was identified as a CSS framework.
 
-![Minion](./images/Trello)
-![Minion](./images/Trello)
-![Minion](./images/Trello)
+![TrelloBoard](./Assets/Images/TrelloBoard)
 
 
 
@@ -159,7 +155,7 @@ The updated Trello board was shared and instructions regarding how to safely pus
 **Tasks are on Track and ahead of the in-class instructions today**
 
 ``
-![Slack Message-aheadof the game](./images/Trello)
+![Slack Message-a headof the game](.Assets/Images/Ahead-message)
 
 
 
@@ -373,7 +369,7 @@ Front-end Developer and HTML Architect
 
 
 ``
-### Nineth Team Meeting
+### Ninth Team Meeting
 ``
 Date: Thursday 10th February 2022           
 Time: 18:30
@@ -389,13 +385,19 @@ Present:
 
 ``
 
-The nineth team meeting provided an opportunity to solidify the team understanding of the product and code behind it. To raise any last minute issues or concerns and review the presentation. 
+The ninth team meeting provided an opportunity to solidify the team understanding of the product and code behind it. To raise any last minute issues or concerns and review the presentation. 
+The stand up activity was to throw an imaginary ball to the next person and give an answer to set questions.
 
-
+Todays Questions were:
+1. How has your day been today?
+2. Is there anything you are concerned about regarding presentation day?
 ``
-**Practice Presentation to Class Tutor**
-
+This gave team members and opportunity to support and encourage each other as required
 ``
+
+**The team delivered a Practice Presentation to the Class Tutor**
+
+
 
 ----------------------------------------------------------------------
 
