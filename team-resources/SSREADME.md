@@ -7,9 +7,9 @@ The purpose of this task was to create a product using technical skills gained d
 
 ## Meet the Team - Team-Arch
 ``
-- Daniel Bowen - Product Owner and Back-end Developer.
+- Daniel Bowen - JavaScript Dev and Front-end Developer.
 - Samaya Gure - CSS Lead and Front-end Developer.
-- Girish Madnani- Technical Lead and Back-end Developer.
+- Girish Madnani- Technical Lead and Front-end Developer.
 - Jean McLeod - Scrum Master and Front-end Developer.
 - Jibril Yusuf - HTML Architect and Front-end Developer.
 ``
@@ -28,6 +28,7 @@ The following minimum requirements were secured;
 
 ```
  *Communication was Key as some tasks ran concurrently. 
+
  ```
 
 
@@ -35,9 +36,9 @@ The following minimum requirements were secured;
 
 - Read the Brief
 - Clarify the acceptance criteria.
-- Log into Github
 - Create a new Repository  
-- Copy the SSH key to the local computer.
+- Share Github with team
+
  <p> 
  * This is achieved by clicking the little boxes next to the Git Hub key. See the image below.
  </p>
@@ -69,14 +70,6 @@ clone, add, commit, push, status or ASK
 - Team-Arch
 - <a href="mailto:AbriCSltd@gmail.com">email me</a>
 - 
-
-## Version History
-
-- <b>0.2  The Latest<b>
-    - Click [here](https://abrics.github.io/Horiseon) for the final release. 2021/12/12.
-
-- 0.1
-  - Initial Release 2021/12/02
 
 ## License
 
