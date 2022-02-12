@@ -1,6 +1,6 @@
 
 <div align="center">
-  <img src="Images/Team-Arch.jpeg" alt="Team-Arch" width="400" height="250">
+  <img src="assets/Images/Team-Arch.jpeg" alt="Team-Arch" width="400" height="250">
 </div>
 
 
@@ -9,11 +9,11 @@
     <strong>The is a GAME to test your geography knowledge.</strong>
     <br />
     <br />
-    <a href="">o</a>
+    <a href="https://github.com/gmadnani/Where-are-we">Github</a>
     ·
-    <a href="">o</a>
+    <a href="https://gmadnani.github.io/Where-are-we/">Game</a>
     ·
-    <a href="">o</a>
+    <a href="https://docs.google.com/presentation/d/1E0ahdI2iAWFf4-wPtRoKqUc9GCqblecwtM6hwo1nHHo/edit#slide=id.p">Presentation</a>
   </p>
 </h1>
 <br/><br/>
@@ -21,7 +21,7 @@
 <!-- Preview -->
 <p align="center">
   <a href="">
-    <img src="Images/Where are we_Game.jpeg" width="400" height="250"/>
+    <img src="assets/Images/game.png" width="300" height="250"/>
   </a>
 </p>
 <br/>
@@ -51,14 +51,10 @@ This is an education quiz game that uses APIs to retrieve photographs and geogra
 
 ## Playing the Game
 - As you play the game your points will increase with every correct question
-- Your score will decrease for every incorrect question 
+- Your score will decrease if the time runs out for the question time quiz
 
-``
-**you could end up with a negative score!!**
 
-``
 
-<!--See the [open issues](https://github.com/SanjaySunil/README-Template/issues).-->
 
 ## Contributing
 
@@ -67,25 +63,17 @@ Contributions are what make the open source community such an amazing place to b
 
 ## Meet the Team - Team-Arch
 
-``
+
 - Daniel Bowen - JavaScript Dev and Front-end Developer.
 - Samaya Gure - CSS Lead and Front-end Developer.
 - Girish Madnani- Technical Lead and Front-end Developer.
 - Jean McLeod - Scrum Master and Front-end Developer.
 - Jibril Yusuf - HTML Architect and Front-end Developer.
-``
 
-## Acknowledgements
-
-(https://github.com/SanjaySunil/README-Template/network/members)
-<br/>
--->
-
-## License
-
-Copyright © 2021 Sanjay Sunil (sanjaysunil@protonmail.com)
-
-Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Website
 https://gmadnani.github.io/Where-are-we/
+
+https://github.com/gmadnani/Where-are-we
+
+https://docs.google.com/presentation/d/1E0ahdI2iAWFf4-wPtRoKqUc9GCqblecwtM6hwo1nHHo/edit#slide=id.p
