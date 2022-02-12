@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings Page</title>
+  <link rel="stylesheet" href="assets/setting-stylesheet.css">
+  <!--<link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <link rel="stylesheet" href="css/skeleton.css">-->
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+<head>
+
+<header class="v-header container">
+  <div class="fullscreen-video-wrap">
+    <video src="Assets/Images/Tokyo_Traffic-1080p.mp4" autoplay="true" loop="true"></video>
+  </div>
+  <div class="header-overlay"></div>
+  <div class="header-content">
+    <h1>Do you have time to play a game?</h1>
+    <li>You get 15 seconds to answer each question!! </li>
+    <li>A 10 question game will take you 2 minutes and 30 seconds to complete </li></p>
+    
+    <a href="#" class="tooltipbtn">Read More</a>
+     <!-- <span class="tooltiptext">Did you guess correctly. That was Tokoyo</span>-->
+    </div>
+  </div>
+
+</header>
+
+<body>
+
+  <header class="font-effect-shadow-multiple"><i>Where are We ?</i></header>
+
+  
+  <div class="containerchoice" id="container-choice">
+
+  <div class="innerchoice" id="inner-choice">
+  <section class="boxedinfo" id="boxedinfo">
+    <ol><bold>
+      <li>You can choose individually timed questions or a single timer for the whole game (select option 1 or 2)</li>
+      <li>Choose the number of questions you have time to answer.</li>
+      <li>Then press the 'Start Game' button.</li>
+    </bold></ol>
+  </section>
+     
+
+<div class="boxedit">
+ <!-- <section class="boxed" id="boxedwgtimer">
+      <h5><i>Option 1.</i><h5> <h3><br>Whole Game Timer</br></h3>
+      <input type="checkbox" id=cboxtimer value="boxtimes" name="boxtime"/> 
+  </section>
+
+  
+  <section class="boxed" id="boxedtimedq ">
+      <h5><i>Option 2.</i><h5> <h3><br>Timed Questions</br></h3>
+      <input type="checkbox" id=cboxq value="cbox" name="boxq" size="1"/>
+  </section>-->
+
+  <section class="boxed" id="boxedtimedq ">
+    <h5><i>Option 1.</i><h5> <h3><b>Timed Questions</b></h3>
+    <input type="radio" value="TQs" name="TimerQ"/> 
+    <br><br>
+    <h5><i>Option 2.</i><h3><b>Whole Game Time</b></h3>
+    <input type="radio" value="WGT" name="TimerQ"/>
+</section>
+
+
+  <section class="boxed" id="boxednumberq">
+      <h4 id=NoQs><b>Number of Questions</b></h4>
+      <div class="dropdown">
+        <button type="submit">Submit</button>
+        <select id="selectMe" onchange="getSelectValue();">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
+      </div> 
+
+  </section>
+</div>
+
+<p class=field>The Duration of your Game will be 
+  
+  <p><input type="time" name="duration" id="durationofGame"></p></input>
+  
+ 
+</div>
+
+  <div class="btn-grid">
+  <div class=btnwrapper>
+  <button class=btnset id="setting">Settings</button>
+ <!--<button id="privacy">privacy/GDPR Info</button>>-->
+  <button class=btnstart id="begin-game">Start Game</button>
+</div>
+</div>
+  <!--<button id="Home">Home</button>-->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./Assets/js/script.js"></script>
+</body>
+</html>
