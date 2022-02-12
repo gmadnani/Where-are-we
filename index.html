@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <section id="home"> 
+        
+        <div class="rule_box">
+            <h1>Where Are We?</h1>
+          <div class="rule-title"><span>These are the rules to follow:</span></div>
+          <div class="rule-list">
+            
+    
+            <div class="rule">
+              1. Every Question you will have seconds <span>10-15 seconds</span>
+            </div>
+            <div class="rule">2. Selected answer can't be undone</div>
+            <div class="rule">3. Can't select after 5 seconds</div>
+            <div class="rule">4. When you begin the quiz you cannot exit</div>
+            <div class="rule">5. When you press begin the the quiz start</div>
+          </div>
+          <form>
+              Enter your name to begin the game: <input id="name" type="text" />
+          </form>
+         
+          <div class="buttons">
+            <button class="btn" onclick="opensettings()">settings</button>
+            <button class="btn" onclick="startquiz()">start</button>
+    
+            <h2>Coding Quiz Challenge</h2>
+            <p>
+              Try to follow the the rules of the span quiz and answer the question to your best of your ability <p>
+          </div>
+        </div>
+      </section>
+
+      <section id="quiz">
+        <div class="rule_box">
+            <h1>Where Are We?</h1>
+       <div id="img-answer"></div>
+      
+          <div id="answer-buttons" class="btn-grid">
+              <button class="btn" id="answer-1">Answer 1</button> 
+              <button class="btn" id="answer-2">Answer 2</button>
+              <button class="btn" id="answer-3">Answer 3</button>
+              <button class="btn" id="answer-4">Answer 4</button>
+          </div>
+          <div class="controls">
+            <button id="start-btn" class="start-btn btn">Timer</button>
+            <button id="next-btn" class="next-btn btn hide">Score</button>
+        </div>
+      </div>
+    </div>
+      <div class="score-container">
+        <span id="right-answer"></span>
+   </div>
+</div>
+</section>
+
+<section id= "highscore">
+    <div class= "rule_box">
+        <h1>Where Are We?</h1>
+        <h2 id="highest-score"></h2>
+        <div id="high-score-list"></div>
+        <div>
+          <button class="btn" onclick="opensettings()">Change settings</button>
+          <button class="btn" onclick="startquiz()">Restart game</button>
+          <button class="btn" id="clear-score" onclick="clearScores()">Clear previous Scores</button>
+        </div>
+      </div>
+    </div>
+</div>
+  </section>
+
+  <section id= "settings">
+    <div class="rule_box">
+        <h1>Where Are We?</h1>
+        <form>
+            <h3>Timer Choice: </h3>
+                <input type="radio" name="Timer" value="QuestionTimer" onclick="timerqCheck()" checked> Question Timer<br>
+                <input type="radio" name="Timer" value="QuizTimer" onclick="timerwCheck()"> Whole Quiz Timer<br><br>
+          </form>
+          <h3>Select the time:</h3>
+          <select name="timeqt" id= "qtime">
+            <option value="5">5 seconds</option>
+            <option value="10">10 seconds</option>
+            <option value="15">15 seconds</option>
+            <option value="20">20 seconds</option>
+          </select>
+          <select name="timewt" id= "wtime">
+            <option value="30">30 seconds</option>
+            <option value="45">45 seconds</option>
+            <option value="60">60 seconds</option>
+            <option value="75">75 seconds</option>
+          </select>
+        <br><br>
+          <form>
+            <h3> Number of Questions:</h3>
+                <input type="radio" name="quesNum" value="5" checked> 5<br>
+                <input type="radio" name="quesNum" value="10" > 10<br>
+                <input type="radio" name="quesNum" value="15" > 15<br>
+                <input type="radio" name="quesNum" value="20" > 20<br>
+          </form>
+          <button class="btn" id="begin-game" onclick="startquiz()">start game</button>
+          <button class="btn" id="Home" onclick="gohome()">Home</button>
+    </div>
+    
+  </section>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+   <script src="assets/js/gamepage-script.js"></script>
+</body>
+</html>
