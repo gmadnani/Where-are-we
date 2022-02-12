@@ -51,7 +51,7 @@ This is an education quiz game that uses APIs to retrieve photographs and geogra
 
 ## Playing the Game
 - As you play the game your points will increase with every correct question
-- Your score will decrease for every incorrect question 
+- Your score will decrease if you do not answer the question in the allotted time. 
 
 ``
 **you could end up with a negative score!!**
