@@ -77,3 +77,6 @@ https://gmadnani.github.io/Where-are-we/
 https://github.com/gmadnani/Where-are-we
 
 https://docs.google.com/presentation/d/1E0ahdI2iAWFf4-wPtRoKqUc9GCqblecwtM6hwo1nHHo/edit#slide=id.p
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
