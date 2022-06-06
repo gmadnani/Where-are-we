@@ -6,7 +6,7 @@
 
 <h1 align="center">Where are We?</h1>
   <p align="center">
-    <strong>The is a GAME to test your geography knowledge.</strong>
+    <strong>This is a GAME to test your geography knowledge.</strong>
     <br />
     <br />
     <a href="https://github.com/gmadnani/Where-are-we">Github</a>
